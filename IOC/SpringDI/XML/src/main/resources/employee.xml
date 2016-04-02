@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" xmlns:ns1="http://www.springframework.org/schema/context">
+
+    <bean id="employee" class="com.simple.spring.Employee">
+        <constructor-arg name="id" value="10" type="int"></constructor-arg>
+        <constructor-arg  value="Rahul"></constructor-arg><!--Default type taken is String-->
+        <constructor-arg>
+            <!--Phone number list-->
+            <list>
+                <value>12345</value>
+                <value>78945</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <!--Inner bean injection-->
+            <bean class="com.simple.spring.Address">
+                <property name="city" value="Hyderabad"></property>
+                <property name="country" value="India"></property>
+            </bean>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <ref bean="car"></ref>
+                <bean class="com.simple.spring.Cars">
+                    <property name="name" value="Tata Safari"></property>
+                </bean>
+            </list>
+        </constructor-arg>
+        <!--setter way of injection-->
+        <property name="dept" ref="dept"></property>
+    </bean>
+        
+    <!--Setter injection-->
+    <bean class="com.simple.spring.Cars" id="car">
+        <property name="name" value="Tata Nano"></property>
+    </bean>
+    
+    <!--This bean will be set programmatically-->
+    <bean class="com.simple.spring.Technology" id="tech"></bean>
+    
+    <!--This bean uses custom method for instantiation-->
+    <bean class="com.simple.spring.Department" id="dept" init-method="initializeDepartment"></bean>
+    
+    
+    <!--This bean will be inherited by another bean-->
+    <bean class="com.simple.spring.Address" id="parentAdd">
+       <property name="city" value="Columbo"></property> 
+    </bean>
+</beans>
