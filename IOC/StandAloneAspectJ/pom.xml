@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
-        <aspectj.version>1.7.4</aspectj.version>
+        <aspectj.version>1.8.9</aspectj.version>
     </properties>
     <dependencies>
         <dependency>
@@ -21,10 +21,10 @@
     <build>
         <plugins>
             <!--The below plugin is used for compile time weaving of the aspect classes-->
-<!--            <plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.6</version>
+                <version>1.8</version>
                 <executions>
                     <execution>
                         <goals>
@@ -40,13 +40,23 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
             <!--Below plugin configuration is for LTW and execution-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <executions>
+<!--                     <execution>
+                        <id>CompileTimeWeavedClassExecution</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <phase>install</phase>
+                        <configuration>
+                            <mainClass>com.standalone.aspectJ.Main</mainClass>
+                        </configuration>
+                    </execution>-->
                     <execution>
                         <id>loadTimeWeaving</id>
                         <goals>
@@ -64,18 +74,16 @@
                             </arguments>
                         </configuration>
                     </execution>
-<!--                    <execution>
-                        <id>CompileTimeWeavedClassExecution</id>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <phase>install</phase>
-                        <configuration>
-                            <mainClass>com.standalone.aspectJ.Main</mainClass>
-                        </configuration>
-                    </execution>-->
                 </executions>
                 
+                <!--plugin dependencies-->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
