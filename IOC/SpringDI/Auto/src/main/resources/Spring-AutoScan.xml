@@ -17,4 +17,6 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 		
 	</context:component-scan>
 
---></beans>
+-->
+    <bean id="dup" class="com.spring.auto.bean.scope.SingletonClass"></bean>
+</beans>

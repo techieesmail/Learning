@@ -1,5 +1,6 @@
 package com.spring.auto.app;
 
+import com.spring.auto.bean.scope.SingletonClass;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,8 +14,11 @@ public class App
     		new ClassPathXmlApplicationContext(new String[] {"Spring-AutoScan.xml"});
 
     	CustomerService cust = (CustomerService)context.getBean("customerService");
+        SingletonClass s = (SingletonClass)context.getBean("singletonClass");
+        s.sayHello();
+        s.sayHello();
     	//System.out.println(cust);
-        cust.sayHello();
+       // cust.sayHello();
     	
     }
 }

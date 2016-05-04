@@ -3,4 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+    <interceptors>
+        <class> com.examples.cdi.interceptors.LoggingInterceptor</class>
+        <class>com.examples.cdi.stereotypes.StereoInterceptor</class>
+    </interceptors>
+    <!--When alternatives are declared , these are picked even those actual dependencies exists-->
+<!--    <alternatives>
+        <class>com.examples.cdi.alternatives.AlternativeBean</class>
+    </alternatives>-->
 </beans> 
