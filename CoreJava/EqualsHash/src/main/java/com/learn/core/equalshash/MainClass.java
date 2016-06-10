@@ -13,6 +13,7 @@ import java.util.HashMap;
  */
 public class MainClass {
     public static void main(String[] args) {
+        //Comments testing
         HashMap m = new HashMap();
         m.put(new Employee(1), "Rahul");
         m.put(new Employee(1), "venkat");
