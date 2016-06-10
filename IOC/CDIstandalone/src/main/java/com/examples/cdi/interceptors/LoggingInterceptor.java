@@ -20,6 +20,7 @@ public class LoggingInterceptor {
     
     @AroundInvoke
     public Object simpleLogging(InvocationContext ctx)throws Exception{
+        System.out.println("Simple logging called ");
         System.out.println(ctx.getMethod());
         Object obj = ctx.proceed();
         System.out.println(obj);

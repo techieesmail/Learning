@@ -5,6 +5,7 @@
  */
 package com.inter.remote;
 
+import com.shared.classes.ExecClass;
 import com.shared.classes.SharedClass;
 import javax.ejb.Remote;
 
@@ -17,4 +18,12 @@ public interface HelloRemoteInterface {
     public String sayHello(String name);
     public SharedClass getSharedClass();
     public void updateSharedI(int i);
+    public void createConnections();
+    public void closeConnections();
+    public void insertRecordDB();
+    
+    public ExecClass getExecClass();
+    
+    
+    public void insertIntoMultipleDBs();
 }

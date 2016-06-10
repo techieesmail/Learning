@@ -11,9 +11,13 @@ import java.io.Serializable;
  *
  * @author SanghviR
  */
-public class SharedClass implements Serializable{
+public class SharedClass implements IShared{
     public int i;
     public void printI(){
         System.out.println("The value of i in shared class  "+this.i);
+    }
+    
+    public void exec(){
+        new ExecClass().exec();
     }
 }

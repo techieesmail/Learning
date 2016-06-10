@@ -18,7 +18,7 @@ import org.jboss.weld.environment.se.WeldContainer;
  * @author Family
  */
 public class App {
-    //@Inject
+    @Inject
     private IGreeting greeting;
     
     @Inject
@@ -48,20 +48,20 @@ public class App {
         WeldContainer container = weld.initialize();
         
         //Interceptors
-//        LoggingInterceptorBean logging = container.instance().select(LoggingInterceptorBean.class).get();
-//        logging.sayHello();
+        LoggingInterceptorBean logging = container.instance().select(LoggingInterceptorBean.class).get();
+        logging.sayHello();
         
         //Regular Injection
-        App app = container.instance().select(App.class).get();
-//        app.varTest("Rahul");
-//        System.out.println(app.greeting.greet("Rahul"));
+//        App app = container.instance().select(App.class).get();
+////        app.varTest("Rahul");
+////        System.out.println(app.greeting.greet("Rahul"));
+////        
+////        
+////        //Alternative Injection
+////        app.bean.sayHello();
 //        
-//        
-//        //Alternative Injection
-//        app.bean.sayHello();
-        
-        //Stereotype injection
-        app.stereoBean.sayHello();
+//        //Stereotype injection
+//        app.stereoBean.sayHello();
     }
     
     public void varTest(String name,int...i){

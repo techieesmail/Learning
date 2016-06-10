@@ -7,6 +7,7 @@
     </head>
     <body>
         <form method="POST" action="upload" enctype="multipart/form-data" >
+            <input type="text" name="PlainName" value="Rahul"/>
             File:
             <input type="file" name="file" id="file" /> <br/>
             <!--Destination:
