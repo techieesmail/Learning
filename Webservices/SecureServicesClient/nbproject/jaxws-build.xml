@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-UserNameService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UserNameService"/>
+        <property name="wsdl-UserNameService" location="xml-resources/web-service-references/UserNameService/wsdl/localhost_2000/SecureServices/UserNameService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserNameService" destdir="${build.generated.dir}/jax-wsCache/UserNameService" wsdl="${wsdl-UserNameService}" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:2000/SecureServices/UserNameService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-UserNameService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UserNameService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UserNameService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UserNameService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/UserNameService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/service/username"/>
+    </target>
+    <target name="wsimport-client-x509Service" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/x509Service"/>
+        <property name="wsdl-x509Service" location="xml-resources/web-service-references/x509Service/wsdl/localhost_8181/SecureServices/x509Service.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/x509Service" destdir="${build.generated.dir}/jax-wsCache/x509Service" wsdl="${wsdl-x509Service}" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="https://localhost:8181/SecureServices/x509Service?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-x509Service}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/x509Service"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/x509Service">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-x509Service" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/x509Service"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/x509/service"/>
+    </target>
+    <target name="wsimport-client-AsymmetricWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AsymmetricWebService"/>
+        <property name="wsdl-AsymmetricWebService" location="xml-resources/web-service-references/AsymmetricWebService/wsdl/localhost_2000/SecureServices/AsymmetricWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AsymmetricWebService" destdir="${build.generated.dir}/jax-wsCache/AsymmetricWebService" wsdl="${wsdl-AsymmetricWebService}" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:2000/SecureServices/AsymmetricWebService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-AsymmetricWebService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AsymmetricWebService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AsymmetricWebService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AsymmetricWebService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AsymmetricWebService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/service/asymmetric"/>
+    </target>
+    <target name="wsimport-client-samlService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/samlService"/>
+        <property name="wsdl-samlService" location="xml-resources/web-service-references/samlService/wsdl/localhost_8181/SecureServices/samlService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/samlService" destdir="${build.generated.dir}/jax-wsCache/samlService" wsdl="${wsdl-samlService}" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="https://localhost:8181/SecureServices/samlService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-samlService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/samlService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/samlService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-samlService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/samlService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/service/saml"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-UserNameService, wsimport-client-x509Service, wsimport-client-AsymmetricWebService, wsimport-client-samlService"/>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="mainclientconfig" 
+ >
+    <import location="UserNameService.xml" namespace="http://userName.service.com/"/>
+    <import location="x509Service.xml" namespace="http://service.x509.com/"/>
+    <import location="AsymmetricWebService.xml" namespace="http://asymmetric.service.com/"/>
+    <import location="samlService.xml" namespace="http://saml.service.com/"/>
+</definitions>

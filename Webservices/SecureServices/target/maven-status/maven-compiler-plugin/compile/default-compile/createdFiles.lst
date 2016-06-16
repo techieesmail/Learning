@@ -1,0 +1,4 @@
+com\service\userName\UserNameService.class
+com\service\saml\samlService.class
+com\service\asymmetric\AsymmetricWebService.class
+com\x509\service\x509Service.class

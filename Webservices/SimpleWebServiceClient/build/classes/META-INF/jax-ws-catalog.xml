@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/Rahul/Tuition/NewBatch/Kapil/webservices/xml-resources/SimpleServiceDemo.wsdl" uri="xml-resources/web-service-references/SimpleServiceDemo/wsdl/SimpleServiceDemo.wsdl"/>
+    <system systemId="file:/E:/Rahul/Tuition/NewBatch/Kapil/webservices/xml-resources/SimpleServiceDemo_schema1.xsd" uri="xml-resources/web-service-references/SimpleServiceDemo/wsdl/SimpleServiceDemo_schema1.xsd"/>
+    <system systemId="file:/E:/Rahul/Tuition/NewBatch/Kapil/webservices/xml-resources/DemoService.wsdl" uri="xml-resources/web-service-references/DemoService_1/wsdl/DemoService.wsdl"/>
+    <system systemId="file:/E:/Rahul/Tuition/NewBatch/Kapil/webservices/xml-resources/DemoService_schema1.xsd" uri="xml-resources/web-service-references/DemoService_1/wsdl/DemoService_schema1.xsd"/>
+    <system systemId="file:/E:/Rahul/Tuition/NewBatch/Nitu/xml-resources/SampleServiceDemo.wsdl" uri="wsdl/SampleServiceDemo.wsdl"/>
+    <system systemId="file:/E:/Rahul/Tuition/NewBatch/Nitu/xml-resources/SampleServiceDemo_schema1.xsd" uri="wsdl/SampleServiceDemo_schema1.xsd"/>
+</catalog>

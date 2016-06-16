@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:7001/SimpleService?wsdl" uri="xml-resources/web-service-references/SimpleService/wsdl/localhost_7001/SimpleService.wsdl"/>
+    <system systemId="http://localhost:7001/SimpleService?xsd=1" uri="xml-resources/web-service-references/SimpleService/wsdl/localhost_7001/SimpleService.xsd_1.xsd"/>
+    <system systemId="file:/E:/Rahul/Tuition/Venkat/xml-resources/SimpleService.wsdl" uri="xml-resources/web-service-references/SimpleService/wsdl/SimpleService.wsdl"/>
+    <system systemId="file:/E:/Rahul/Tuition/Venkat/xml-resources/SimpleService_schema1.xsd" uri="xml-resources/web-service-references/SimpleService/wsdl/SimpleService_schema1.xsd"/>
+    <system systemId="http://127.0.0.1:2000/SampleServiceDemo?xsd=1" uri="xml-resources/web-service-references/SampleServiceDemo/wsdl/127.0.0.1_2000/SampleServiceDemo.xsd_1.xsd"/>
+    <system systemId="http://localhost:2000/SampleServiceDemo?WSDL" uri="xml-resources/web-service-references/SampleServiceDemo/wsdl/localhost_2000/SampleServiceDemo.wsdl"/>
+    <system systemId="http://localhost:2000/SampleServiceDemo?xsd=1" uri="xml-resources/web-service-references/SampleServiceDemo/wsdl/localhost_2000/SampleServiceDemo.xsd_1.xsd"/>
+</catalog>

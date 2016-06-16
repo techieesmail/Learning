@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>SecureServices</groupId>
+    <artifactId>SecureServices</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>SecureServices</name>
+
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <compilerArguments>
+                        <endorseddirs>${endorsed.dir}</endorseddirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${endorsed.dir}</outputDirectory>
+                            <silent>true</silent>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax</groupId>
+                                    <artifactId>javaee-endorsed-api</artifactId>
+                                    <version>7.0</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--Plugin for generating wsdls-->
+            <plugin>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.3</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.glassfish.metro</groupId>
+                        <artifactId>webservices-tools</artifactId>
+                        <version>2.3</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <!--Dependencies inside plugin are used for plugin execution only-->
+                    <dependency>
+                        <groupId>org.glassfish.metro</groupId>
+                        <artifactId>webservices-rt</artifactId>
+                        <version>2.3</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <!-- see https://java.net/jira/browse/WSIT-1672 -->
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>asymmetricWsdl</id>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <configuration>
+                            <genWsdl>true</genWsdl>
+                            <sei>com.service.asymmetric.AsymmetricWebService</sei>
+                            <verbose>true</verbose>
+                            <xnocompile>true</xnocompile>
+                            <keep>true</keep>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>samlServiceWsdl</id>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <configuration>
+                            <genWsdl>true</genWsdl>
+                            <sei>com.service.saml.samlService</sei>
+                            <verbose>true</verbose>
+                            <xnocompile>true</xnocompile>
+                            <keep>true</keep>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>userNameWsdl</id>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <configuration>
+                            <genWsdl>true</genWsdl>
+                            <sei>com.service.userName.UserNameService</sei>
+                            <verbose>true</verbose>
+                            <xnocompile>true</xnocompile>
+                            <keep>true</keep>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>x509Wsdl</id>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <configuration>
+                            <genWsdl>true</genWsdl>
+                            <sei>com.x509.service.x509Service</sei>
+                            <verbose>true</verbose>
+                            <xnocompile>true</xnocompile>
+                            <keep>true</keep>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+     <!--The below plugin configuration is required for generating wsit definitions in wsdl. Basically the wsgen bundled with metro/glassfish identifies 
+     the xmls containing wsit specific definitions under classes/meta-inf. These xmls are used by wsgen 
+            for generating the definitions specific to wsit in wsdl-->     
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+                            <resources>          
+                                <resource>
+                                    <directory>src/main/webapp/WEB-INF</directory>
+                                    <filtering>false</filtering>
+                                    <includes>
+                                        <include>**/*</include>
+                                    </includes>
+                                </resource>
+                            </resources>              
+                        </configuration>            
+                    </execution>
+                </executions>
+            </plugin>
+            
+        </plugins>
+    </build>
+
+</project>

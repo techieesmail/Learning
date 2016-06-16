@@ -1,0 +1,4 @@
+com\resources\HelloRest.class
+com\message\writer\HelloBodyWriter.class
+com\xml\Address.class
+com\xml\Employee.class

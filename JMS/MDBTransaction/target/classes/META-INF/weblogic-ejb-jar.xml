@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-ejb-jar xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.0/weblogic-ejb-jar.xsd">
+
+    <weblogic-enterprise-bean>
+        <ejb-name>UIListner</ejb-name>
+        <message-driven-descriptor>
+            <pool>
+                <max-beans-in-free-pool>20</max-beans-in-free-pool>
+                <initial-beans-in-free-pool>10</initial-beans-in-free-pool>
+            </pool>
+        </message-driven-descriptor>
+        <dispatch-policy>QueueThreads</dispatch-policy>
+    </weblogic-enterprise-bean> 
+    <work-manager>
+        <name>QueueThreads</name>
+        <max-threads-constraint>
+            <name>QueueMaxThreads</name>
+            <count>12</count>
+        </max-threads-constraint>
+    </work-manager>  
+</weblogic-ejb-jar>

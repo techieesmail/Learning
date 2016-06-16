@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<deployment-plan xmlns="http://xmlns.oracle.com/weblogic/deployment-plan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/weblogic/deployment-plan http://xmlns.oracle.com/weblogic/deployment-plan/1.0/deployment-plan.xsd">
+  <application-name>SimpleWebService</application-name>
+  <variable-definition>
+    <variable>
+      <name>ServletDescriptor_com.simple.service.SimpleService_ServletName_14149353924960</name>
+      <value>com.simple.service.SimpleService</value>
+    </variable>
+  </variable-definition>
+  <module-override>
+    <module-name>SimpleWebService.war</module-name>
+    <module-type>war</module-type>
+    <module-descriptor external="false">
+      <root-element>weblogic-web-app</root-element>
+      <uri>WEB-INF/weblogic.xml</uri>
+      <variable-assignment>
+        <name>ServletDescriptor_com.simple.service.SimpleService_ServletName_14149353924960</name>
+        <xpath>/weblogic-web-app/servlet-descriptor/[servlet-name="com.simple.service.SimpleService"]/servlet-name</xpath>
+        <origin>planbased</origin>
+      </variable-assignment>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>web-app</root-element>
+      <uri>WEB-INF/web.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>wldf-resource</root-element>
+      <uri>META-INF/weblogic-diagnostics.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>weblogic-webservices</root-element>
+      <uri>WEB-INF/weblogic-webservices.xml</uri>
+      <hash-code>1414935650902</hash-code>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>webservices</root-element>
+      <uri>WEB-INF/webservices.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>webservice-policy-ref</root-element>
+      <uri>WEB-INF/weblogic-webservices-policy.xml</uri>
+    </module-descriptor>
+  </module-override>
+  <config-root>E:\Rahul\Workspace\NetBeans\SimpleWebService\dist\plan</config-root>
+</deployment-plan>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://service.simple.com/" xmlns:tns="http://service.simple.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="CustomException" type="tns:CustomException"/>
+
+  <xs:element name="empReturn" type="tns:empReturn"/>
+
+  <xs:element name="empReturnResponse" type="tns:empReturnResponse"/>
+
+  <xs:element name="myHeader" nillable="true" type="xs:string"/>
+
+  <xs:element name="testOperation" type="tns:testOperation"/>
+
+  <xs:element name="testOperationResponse" type="tns:testOperationResponse"/>
+
+  <xs:complexType name="testOperation">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testOperationResponse">
+    <xs:sequence>
+      <xs:element name="FullName" type="xs:string" minOccurs="0"/>
+      <xs:element name="secondReturn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="empReturn">
+    <xs:sequence>
+      <xs:element name="empName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="empReturnResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:employee" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="employee">
+    <xs:sequence>
+      <xs:element name="empName" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CustomException">
+    <xs:sequence>
+      <xs:element name="exceptId" type="xs:int" minOccurs="0"/>
+      <xs:element name="excepType" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
