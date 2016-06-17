@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services/>
+  <clients>
+    <client name="PrimitiveWebServiceService">
+      <wsdl-url>http://[2002:7c7b:3f44:0:0:0:7c7b:3f44]:7001/MultiplePortService/PrimitiveWebServiceService?WSDL</wsdl-url>
+      <local-wsdl-file>_2002_7c7b_3f44_0_0_0_7c7b_3f44__7001/MultiplePortService/PrimitiveWebServiceService.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">com.client.multiple.ports</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://[2002:7c7b:3f44:0:0:0:7c7b:3f44]:7001/MultiplePortService/PrimitiveWebServiceService?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>com.client.multiple.ports</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+  </clients>
+</jax-ws>

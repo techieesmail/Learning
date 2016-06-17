@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://service.base.com/" xmlns:tns="http://service.base.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="baseMethod" type="tns:baseMethod"/>
+
+  <xs:element name="baseMethodResponse" type="tns:baseMethodResponse"/>
+    <xs:element name="baseMethod1" type="tns:baseMethod"/>
+
+  <xs:element name="baseMethodResponse1" type="tns:baseMethodResponse"/>
+
+  <xs:complexType name="baseMethod">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="baseMethodResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+
+
+  
+  
+</xs:schema>
+

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://[2002:7c7b:3f44:0:0:0:7c7b:3f44]:7001/MultiplePortService/PrimitiveWebServiceService?WSDL" uri="xml-resources/web-service-references/PrimitiveWebServiceService/wsdl/_2002_7c7b_3f44_0_0_0_7c7b_3f44__7001/MultiplePortService/PrimitiveWebServiceService.wsdl"/>
+    <system systemId="http://[2002:7c7b:3f44:0:0:0:7c7b:3f44]:7001/MultiplePortService/PrimitiveWebServiceService?xsd=1" uri="xml-resources/web-service-references/PrimitiveWebServiceService/wsdl/_2002_7c7b_3f44_0_0_0_7c7b_3f44__7001/MultiplePortService/PrimitiveWebServiceService.xsd_1.xsd"/>
+</catalog>
