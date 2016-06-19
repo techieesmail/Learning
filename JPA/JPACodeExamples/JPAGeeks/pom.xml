@@ -8,7 +8,7 @@
     </parent>
     <artifactId>JPAGeeks</artifactId>
     <packaging>jar</packaging>
-<!--    <dependencies>
+    <!--    <dependencies>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
@@ -21,6 +21,38 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.thejavageek.jpa.app.App</mainClass>
+                </configuration>
+            </plugin>
+    
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

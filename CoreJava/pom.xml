@@ -9,6 +9,8 @@
         <module>JavaGenerics</module>
         <module>EqualsHash</module>
         <module>Threading</module>
+        <module>Java8</module>
+        <module>IO</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
