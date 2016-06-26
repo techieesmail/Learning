@@ -5,24 +5,37 @@
  */
 package com.learn.core.threading;
 
+import java.util.concurrent.locks.Lock;
+
 /**
  *
  * @author sanghvir
  */
 public class Resource {
 
-    public void nonSynchronized() {
-        System.out.println("Hey from non synchronization ");
+    private Lock lock;
+
+    public Resource(Lock lock) {
+        this.lock = lock;
+    }
+    
+    
+     synchronized public void nonSynchronized() {
+        System.err.println("Hey from non synchronization ");
     }
 
      public void sync() {
         try {
+            System.out.println("Locking the lock ");
+            //lock.lock();
             System.out.println("Sleeping the thread in sync ");
             Thread.sleep(60000);
             //wait(60000);
             System.out.println("After sleep completion in sync ");
         } catch (Exception e) {
             e.printStackTrace();
+        }finally{
+            //lock.unlock();
         }
     }
 }

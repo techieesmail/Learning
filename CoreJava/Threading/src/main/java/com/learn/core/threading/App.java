@@ -5,13 +5,18 @@
  */
 package com.learn.core.threading;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  *
  * @author sanghvir
  */
 public class App {
     public static void main(String[] args)throws Exception {
-        Resource r = new Resource();
+        Lock lock = new ReentrantLock();
+        Resource r = new Resource(lock);
+        
         WorkerThread sync = new WorkerThread(r);
         WorkerThread nonSync = new WorkerThread(r);
         nonSync.setName("nonSync");

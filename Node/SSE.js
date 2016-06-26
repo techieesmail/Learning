@@ -5,11 +5,25 @@ var fs = require('fs');
 http.createServer(function(req, res) {
   debugHeaders(req);
 
-  if (req.headers.accept && req.headers.accept == 'text/event-stream') {
+  if (true) {
     if (req.url == '/events') {
       console.log('constructing SSE ');
       sendSSE(req, res);
-    } else {
+    } else if(req.url == '/html'){
+      console.log('Inside html code ');
+      res.writeHead(200, {
+        'Content-Type': 'text/html',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Access-Control-Allow-Origin' :'*',
+        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
+      });
+      res.write('Hello from node js')
+      setInterval(function(){
+        console.log('setInterval of html called ');
+        res.write('From setInterval');
+      },5000);
+    }else {
       res.writeHead(404);
       res.end();
     }
@@ -37,7 +51,7 @@ function sendSSE(req, res) {
   }, 5000);
 
   constructSSE(res, id, (new Date()).toLocaleTimeString());
-  //res.end();
+  res.end();
 }
 
 function constructSSE(res, id, data) {

@@ -1,4 +1,5 @@
 /.project
+target/
 /IOC/StandAloneAspectJ/target/
 /IOC/CDIstandalone/target/
 /SpringSecurity/HTTPBasic/nbproject/private/
@@ -48,3 +49,6 @@
 /CoreJava/Java8/MethodReferences/target/
 /CoreJava/IO/target/
 /CoreJava/Java8/StreamAPI/target/
+/JAX-RS/TransferObjects/target/
+/JAX-RS/Client/target/
+/JAX-RS/Service/target/

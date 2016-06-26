@@ -5,6 +5,8 @@
  */
 package com.learn.core.threading;
 
+import java.util.concurrent.locks.Lock;
+
 /**
  *
  * @author sanghvir
@@ -12,7 +14,7 @@ package com.learn.core.threading;
 public class WorkerThread extends Thread{
     
     private Resource resource;
-
+    
     public WorkerThread(Resource resource) {
         this.resource = resource;
     }
