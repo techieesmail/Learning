@@ -11,6 +11,7 @@
         <module>Threading</module>
         <module>Java8</module>
         <module>IO</module>
+        <module>logic_dataStructures</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

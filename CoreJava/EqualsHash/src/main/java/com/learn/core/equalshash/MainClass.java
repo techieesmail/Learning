@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -30,7 +32,11 @@ public class MainClass {
         System.out.println("Equality check "+e1.equals(e2));
         System.out.println("The size "+m.size());
         
-        Set s = m.entrySet();
+        Set<Map.Entry> s = m.entrySet();
+        for(Map.Entry entry : s){
+            System.out.println("The key is "+entry.getKey()+" and the value is "+entry.getValue());
+        }
+        
         
         HashSet hs = new HashSet();
         hs.add(e1);
@@ -43,16 +49,20 @@ public class MainClass {
         List l = new ArrayList();
         l.add(l);
         l.add(2);
-        Iterator i = l.iterator();
-        while(i.hasNext()){
-            System.out.println(i.next());
+        ListIterator i = l.listIterator();
+        System.out.println(i.previous());
+        while(i.hasPrevious()){
+            System.out.println("Hey Caught in previous" +i.next());
             //l.add(3);
         }
+        
         HashMap h = new HashMap();
         h.put("1", l);
         h.put("1", 2);
         
         h.entrySet();
+        
+       
     }
 }
 
