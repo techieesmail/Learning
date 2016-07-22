@@ -5,8 +5,12 @@
  */
 package com.learn.core.streamapi;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 /**
  *
@@ -15,6 +19,24 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         int[] i = {10,15,12,14,8,5,4,9,7,26};
-        Arrays.stream(i).map((n) -> n*2).filter((n) -> n%2==0).forEach(System.out::println);
+        //Arrays.stream(i).map((n) -> n*2).filter((n) -> n%2==0).forEach(System.out::println);
+        
+        
+        //Sum of squares of integers which are multiple of 3 
+        IntStream.range(1, 101).
+                map((m)-> {
+                    //System.out.println("map "+m);
+                    int square = m *m;
+                    //System.out.println("map square "+square);
+                    return square;
+                }).
+                filter((m) -> {
+                    //System.out.println("filter "+m);
+                    return  m%3 == 0;
+                }).
+                forEach(System.out::println);
+        
+        List<String> ls = new ArrayList<>();
+        ls.stream().co
      }
 }

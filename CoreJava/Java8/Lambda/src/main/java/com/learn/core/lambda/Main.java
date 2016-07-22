@@ -12,6 +12,12 @@ import java.io.Console;
  * @author sanghvir
  */
 public class Main {
+    static{
+        
+    }
+    {
+        
+    }
     public static void main(String[] args) {
         //usable only outside IDE
 //        Console console  = System.console();

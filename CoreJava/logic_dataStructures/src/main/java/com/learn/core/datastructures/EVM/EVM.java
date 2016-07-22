@@ -5,13 +5,8 @@
  */
 package com.learn.core.datastructures.EVM;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.LinkedList;
 import java.util.TreeMap;
 
 /**
@@ -21,29 +16,37 @@ import java.util.TreeMap;
 public class EVM {
     
     public static void main(String[] args) {
-        String[] A = {"Modi","Sonia","Modi","Mohan","Modi","Sonia","Mohan","Yadav"};
-        LinkedHashMap<String,Integer> hm = new LinkedHashMap<>();
-        
-        TreeMap<Integer , String> reverse = new TreeMap<>();
+        String[] A = {"Modi","Sonia","Modi","Mohan","Mohan","Sonia","Modi","Yadav"};
+        HashMap<String,Integer> hm = new HashMap<>();
+        TreeMap<Integer,LinkedList<String>> tm = new TreeMap<>();
         
         for(String s : A){
             Integer value = hm.get(s);
             if(value == null){
-                hm.put(s,1);
+                value = 1;
             }else{
-                //int newVal = value++;
-                hm.put(s, ++value);
+              value++;
             }
+            hm.put(s,value);
+            
+            
+            LinkedList<String> candidates = tm.get(value);
+            if(candidates == null){
+                LinkedList<String> ll = new LinkedList<>();
+                ll.addFirst(s);
+                tm.put(value, ll);
+            }else{
+                candidates.addFirst(s);
+                tm.put(value, candidates);
+            }
+                
         }
         
         System.out.println("Map with count is "+hm);
         
-        Set<String> names = hm.keySet();
-        Iterator<String> namesIter = names.iterator();
-        while(namesIter.hasNext()){
-            String key = namesIter.next();
-            reverse.put(hm.get(key), key);
-        }
-        System.out.println("Reverse Map with count "+reverse);
+        tm.keySet().stream().forEach((tmKey) -> {
+            System.out.println("Name -----    "+tm.get(tmKey).getFirst()+"   Count-----   "+tmKey);
+        
+        });
     }
 }

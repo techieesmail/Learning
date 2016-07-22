@@ -15,27 +15,58 @@ public class Resource {
 
     private Lock lock;
 
+    private Object syncObj = new Object();
+
     public Resource(Lock lock) {
         this.lock = lock;
     }
-    
-    
-     synchronized public void nonSynchronized() {
-        System.err.println("Hey from non synchronization ");
+
+    public Integer sharedVariable = 10;
+
+    public void nonSynchronized() {
+        synchronized (syncObj) {
+            System.err.println("Hey from non synchronization ");
+        }
+        //System.err.println("Hey from non synchronization ");
     }
 
-     public void sync() {
-        try {
-            System.out.println("Locking the lock ");
-            //lock.lock();
-            System.out.println("Sleeping the thread in sync ");
-            Thread.sleep(60000);
-            //wait(60000);
-            System.out.println("After sleep completion in sync ");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally{
-            //lock.unlock();
+    public void sync() {
+
+        synchronized (syncObj) {
+
+            try {
+                //System.out.println("Locking the lock ");
+                //lock.lock();
+                System.out.println("Sleeping the thread in sync ");
+                Thread.sleep(60000);
+                //wait(60000);
+                System.out.println("After sleep completion in sync ");
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                //lock.unlock();
+            }
+
         }
+
     }
+
+//    synchronized static public void nonSynchronized() {
+//        System.err.println("Hey from non synchronization ");
+//    }
+//
+//     synchronized static public void sync() {
+//        try {
+//            //System.out.println("Locking the lock ");
+//            //lock.lock();
+//            System.out.println("Sleeping the thread in sync ");
+//            Thread.sleep(60000);
+//            //wait(60000);
+//            System.out.println("After sleep completion in sync ");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }finally{
+//            //lock.unlock();
+//        }
+//    }
 }

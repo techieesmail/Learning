@@ -11,10 +11,10 @@ package com.learn.core.lambda;
  */
 @FunctionalInterface
 public interface FuncInterface {
-    
+
     String sayName();
-    
-    default void sayDefault(){
+
+    default void sayDefault() {
         System.out.println("Default Method of functional interface ");
     }
 }

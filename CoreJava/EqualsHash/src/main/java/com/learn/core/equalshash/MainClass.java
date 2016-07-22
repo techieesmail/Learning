@@ -23,47 +23,55 @@ import java.util.concurrent.ConcurrentMap;
 public class MainClass {
     public static void main(String[] args) {
         //Comments testing
-        HashMap m = new HashMap();
-        Employee e1 = new Employee(1);
-        Employee e2 = new Employee(1);
-        m.put(e1, "Rahul");
-        m.put(e2, "venkat");
+//        HashMap m = new HashMap();
+//        Employee e1 = new Employee(1);
+//        Employee e2 = new Employee(1);
+//        m.put(e1, "Rahul");
+//        m.put(e2, "venkat");
+//        
+//        System.out.println("Equality check "+e1.equals(e2));
+//        System.out.println("The size "+m.size());
+//        
+//        Set<Map.Entry> s = m.entrySet();
+//        for(Map.Entry entry : s){
+//            System.out.println("The key is "+entry.getKey()+" and the value is "+entry.getValue());
+//        }
+//        
+//        
+//        HashSet hs = new HashSet();
+//        hs.add(e1);
+//        hs.add(e2);
+//        System.out.println("The hashset size is "+hs.size());
+//        System.out.println("The value is "+hs.contains(e1));
+//        System.out.println(m.get(e2));
+//       // new Employee(1).testRuntime();
+//       
+//        List l = new ArrayList();
+//        l.add(l);
+//        l.add(2);
+//        ListIterator i = l.listIterator();
+//        System.out.println(i.previous());
+//        while(i.hasPrevious()){
+//            System.out.println("Hey Caught in previous" +i.next());
+//            //l.add(3);
+//        }
+//        
+//        HashMap h = new HashMap();
+//        h.put("1", l);
+//        h.put("1", 2);
+//        
+//        h.entrySet();
         
-        System.out.println("Equality check "+e1.equals(e2));
-        System.out.println("The size "+m.size());
         
-        Set<Map.Entry> s = m.entrySet();
-        for(Map.Entry entry : s){
-            System.out.println("The key is "+entry.getKey()+" and the value is "+entry.getValue());
-        }
+        new StringBufferCalling().callme(new MainClass().sb);
         
-        
-        HashSet hs = new HashSet();
-        hs.add(e1);
-        hs.add(e2);
-        System.out.println("The hashset size is "+hs.size());
-        System.out.println("The value is "+hs.contains(e1));
-        System.out.println(m.get(e2));
-       // new Employee(1).testRuntime();
-       
-        List l = new ArrayList();
-        l.add(l);
-        l.add(2);
-        ListIterator i = l.listIterator();
-        System.out.println(i.previous());
-        while(i.hasPrevious()){
-            System.out.println("Hey Caught in previous" +i.next());
-            //l.add(3);
-        }
-        
-        HashMap h = new HashMap();
-        h.put("1", l);
-        h.put("1", 2);
-        
-        h.entrySet();
-        
+        String s = "*3(-73)(*84)";
+        String[] a = s.split("^(.)$");
+        System.out.println(a);
        
     }
+    
+    final public StringBuffer sb = new StringBuffer("default");
 }
 
 
@@ -97,4 +105,14 @@ class Employee{
     }
     
     
+}
+
+
+class StringBufferCalling{
+    public void callme (StringBuffer sb){
+        sb = new StringBuffer();
+        sb.append("callme");
+        System.out.println(sb);
+        new MainClass().sb  = new StringBuffer("Hey ");
+    }
 }

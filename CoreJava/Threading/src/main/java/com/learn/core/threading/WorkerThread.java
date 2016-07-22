@@ -23,11 +23,14 @@ public class WorkerThread extends Thread{
     public void run() {
         if(this.getName().equalsIgnoreCase("nonSync")){
             resource.nonSynchronized();
+           // Resource.nonSynchronized();
+            //System.out.println("The value of shared variable is "+resource.sharedVariable);
         }else{
-            //resource.sync();
-            synchronized(resource){
-                resource.sync();
-            }
+            //Resource.sync();
+            resource.sync();
+//            synchronized(resource){
+//                resource.sync();
+//            }
         }
     }
     
