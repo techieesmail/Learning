@@ -23,9 +23,10 @@ public class Main {
         Files.list(path).filter(p -> Files.isDirectory(p)).forEach(System.out::println);
         
         //creating a new file
-        
-        Path newFile = Files.createFile(FileSystems.getDefault().
-                getPath("C:/Users/sanghvir/Desktop").resolve("testNIO.txt"));
+        Path p = FileSystems.getDefault().
+                getPath("C:/Users/sanghvir/Desktop").resolve("testNIO.txt");
+        Files.deleteIfExists(p);
+        Path newFile = Files.createFile(p);
         Files.newBufferedWriter(newFile, StandardOpenOption.WRITE).
                 append("Rahul is good boy").append("\t\t\t Apeksha is her wife").close();
         

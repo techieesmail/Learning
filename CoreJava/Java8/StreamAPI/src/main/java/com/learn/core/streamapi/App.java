@@ -5,6 +5,10 @@
  */
 package com.learn.core.streamapi;
 
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +41,5 @@ public class App {
                 forEach(System.out::println);
         
         List<String> ls = new ArrayList<>();
-        ls.stream().co
      }
 }

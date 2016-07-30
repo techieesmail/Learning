@@ -18,6 +18,7 @@ public class MainClass {
     
     public static void main(String[] args) {
         //collectionApproach();
+        //lru datastructure is linkedlist with Queue FIFO.
         algo();
     }
     private static void algo(){
