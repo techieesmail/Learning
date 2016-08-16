@@ -45,6 +45,8 @@ public class App {
 //        
 //        inner.testMethod();
         c.parent = 100;
+        c.m.put(1, "Rahul");
+        c.rc.sayHelloFromRegularClass();
         Path path = Paths.get("C:\\Users\\sanghvir\\Desktop\\test.ser");
         ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(path, StandardOpenOption.CREATE));
         System.out.println("Writing object using standard write method ");
@@ -58,6 +60,7 @@ public class App {
         ChildClass cc  = (ChildClass)in.readObject();
         System.out.println("The hashcode of child after deserialization  "+cc.hashCode());
         System.out.println("I am done and the value of i is "+cc.parent);
+        System.out.println("The value from map is "+cc.m.get(1));
         
         //Deleting the file
         
